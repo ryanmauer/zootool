@@ -1,7 +1,7 @@
 require 'helper'
 
 class TestZootool < Test::Unit::TestCase
-  should "probably rename this file and start testing for real" do
-    flunk "hey buddy, you should probably rename this file and start testing for real"
+  should "implement testing" do
+    flunk "testing is not implemented yet"
   end
 end

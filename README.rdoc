@@ -1,6 +1,73 @@
 = zootool
 
-Description goes here.
+Provides a ruby wrapper around the Zootool API http://zootool.com/api.
+
+Zootool is about collecting, organizing and sharing your favorite images, videos, documents and links from all over the internet. This gem gives you a simple and easy way to access everything Zootool from your ruby projects. You can see it in action in the wild at http://ryanmauer.com.
+
+== Installation
+
+  $ gem install zootool
+  
+== Usage
+
+Using this gem is simple. You simply create a ZooApi object:
+
+  require 'zootool'
+
+  # You'll access everything through a ZooApi object
+  zoo = Zootool::ZooApi.new('your_api_key_here')
+
+And use its users, item, and items methods to access data from Zootool:
+
+  # Get items for a specific user. Returns an array of hashes with each hash representing an item.
+  my_items = zoo.users('rmauer').items
+  
+  # Get items for all users. Returns an array of hashes.
+  all_items = zoo.users.items
+  
+  # Get a single item by its uid. This returns a single hash.
+  an_item = zoo.item('1kf7s')
+  
+  # Gets the most popular items today.
+  popular_today = zoo.items.popular('today')
+  
+Each of these methods returns either an array of hashes or a single hash (see the method documentation for more details on what is returned and what keys the hashes contain).
+
+== More Examples
+
+If you learn by example, this should show you pretty much everything you need to know to start using this gem: 
+
+  require 'zootool'
+  
+  # You'll access everything through a ZooApi object
+  zoo = Zootool::ZooApi.new('your_api_key_here')
+  
+  # Example queries
+  my_items = zoo.users('rmauer').items
+  my_info = zoo.users('rmauer').info
+  my_friends = zoo.users('rmauer').friends
+  my_followers = zoo.users('rmauer').followers
+  my_inspiration_items = zoo.users('rmauer').items(:tag => 'inspiration')
+  all_inspiration_items = zoo.users.items(:tag => 'inspiration')
+  paged_items = zoo.users.items(:limit => 10, :offset => 20)
+  popular_today = zoo.items.popular('today')
+
+  # Using the returned data
+  first_title = popular_today[0]['title']
+  first_thumb = popular_today[0]['thumbnail']
+
+== Features
+
+* Query items by user
+* Query items for all users
+* Query popular items 
+* Query items by tag
+* Perform paging of items using limit and offset parameters
+* Access user info, friends, followers, and profiles
+
+== Planned Features
+
+* Authentication to allow access to private items
 
 == Contributing to zootool
  

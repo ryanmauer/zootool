@@ -17,11 +17,12 @@ Jeweler::Tasks.new do |gem|
   gem.name = "zootool"
   gem.homepage = "http://github.com/ryanmauer/zootool"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = "Ruby wrapper for the Zootool API"
+  gem.description = "A ruby wrapper for the Zootool API. See http://zootool.com/api for the official API documentation."
   gem.email = "me@ryanmauer.com"
   gem.authors = ["Ryan Mauer"]
   # dependencies defined in Gemfile
+  gem.files = Dir.glob('lib/**/*.rb')
 end
 Jeweler::RubygemsDotOrgTasks.new
 
