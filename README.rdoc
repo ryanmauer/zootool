@@ -10,12 +10,12 @@ Zootool is about collecting, organizing and sharing your favorite images, videos
   
 == Usage
 
-Using this gem is simple. You simply create a ZooApi object:
+Using this gem is simple. You simply create a ZootoolApi object:
 
   require 'zootool'
 
-  # You'll access everything through a ZooApi object
-  zoo = Zootool::ZooApi.new('your_api_key_here')
+  # You'll access everything through a ZootoolApi object
+  zoo = Zootool::ZootoolApi.new('your_api_key_here')
 
 And use its users, item, and items methods to access data from Zootool:
 
@@ -39,8 +39,8 @@ If you learn by example, this should show you pretty much everything you need to
 
   require 'zootool'
   
-  # You'll access everything through a ZooApi object
-  zoo = Zootool::ZooApi.new('your_api_key_here')
+  # You'll access everything through a ZootoolApi object
+  zoo = Zootool::ZootoolApi.new('your_api_key_here')
   
   # Example queries
   my_items = zoo.users('rmauer').items
@@ -68,6 +68,7 @@ If you learn by example, this should show you pretty much everything you need to
 == Planned Features
 
 * Authentication to allow access to private items
+* Saving items to Zootool
 
 == Contributing to zootool
  
